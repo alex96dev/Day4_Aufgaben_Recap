@@ -1,11 +1,13 @@
 package de.neuefische;
 
+import java.util.Arrays;
 import java.util.Scanner;
+
 
 public class Main {
     public static void main(String[] args) {
 
-        String myName = "Alex";
+        /*String myName = "Alex";
 
 
         System.out.println(name(myName));
@@ -15,6 +17,12 @@ public class Main {
         System.out.print("\n");
         stringArray();
         returnNumbersAsWords();
+        createNumbers();
+        saveWordsInArray();
+        System.out.println(reverseString("Alex"));
+        System.out.println(splitStringOnComma("Alexander, heute"));
+        System.out.println(sortArray());*/
+        System.out.println(checkSum(342));
 
     }
 
@@ -140,5 +148,66 @@ public class Main {
         }
 
     }
+
+    public static void createNumbers() {
+        for (int i = 1; i <= 100; i++) {
+            if (i % 3 == 0 && i % 5 == 0) {
+                System.out.println("#$" + i);
+            } else if (i % 3 == 0) {
+                System.out.println("#" + i);
+            } else if (i % 5 == 0) {
+                System.out.println("$" + i);
+            } else System.out.println(i);
+        }
+    }
+
+    public static void saveWordsInArray() {
+        String[] array1 = new String[5];
+
+        Scanner scanner = new Scanner(System.in);
+
+        for (int i = 0; i <= 4; i++) {
+            System.out.println("Geben Sie ein Wort ein: ");
+            String word = scanner.nextLine();
+
+            array1[i] = word;
+
+            for (int j = 0; j <= i; j++) {
+                System.out.println(array1[j]);
+            }
+        }
+    }
+
+    public static String reverseString(String s) {
+
+        StringBuilder strb = new StringBuilder(s);
+        s = strb.reverse().toString();
+        return s;
+
+    }
+
+    public static int[] sortArray() {
+        int[] array = {6, 2, 8, 3, 9, 6};
+
+        Arrays.sort(array);
+
+        return array;
+    }
+
+    public static String[] splitStringOnComma(String s){
+        return s.split(",");
+    }
+
+    public static int checkSum(int number) {
+        if (number == 0) {
+            return 0;
+        }
+
+        int lastDigit = number % 10;
+
+        return lastDigit + checkSum(number / 10);
+    }
 }
+
+
 

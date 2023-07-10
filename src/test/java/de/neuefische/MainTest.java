@@ -63,22 +63,30 @@ class MainTest {
         //THEN
         assertEquals(100, actual);
     }
-
     /*@Test
-    void create_Array_With_Strings() {
+    void create_Numbers_From_1_To_100() {
         //GIVEN
-        String eins = "Eins";
-        String zwei = "zwei";
-        String drei = "drei";
-
+        int number = 1;
 
         //WHEN
-        int actual = Main.stringArray(s);
+        int actual = Main.createNumbers(number);
 
         //THEN
-        assertEquals(100, actual);
+        assertEquals(1, actual);
+    }*/
+    @Test
+    void reverseString() {
+        //GIVEN
+        String s = "Alex";
+
+        //WHEN
+        String actual = Main.reverseString(s);
+
+        //THEN
+        assertEquals("xelA", actual);
     }
-*/
+
+
 
 }
 
